@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SOLUTION_DIR="bin/"
-SOURCE_DIR="source/"
+SOURCE_DIR="src/"
 
 # Create the solution directory if it doesn't exist then move to it
 if [ ! -d $SOLUTION_DIR ]; then
