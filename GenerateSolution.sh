@@ -1,14 +1,7 @@
 #!/bin/sh
 
-SOLUTION_DIR="bin/"
-SOURCE_DIR="src/"
+BUILD_DIR="./bin/"
+CMAKE_LIST_DIR="./"
 
-# Create the solution directory if it doesn't exist then move to it
-if [ ! -d $SOLUTION_DIR ]; then
-    mkdir $SOLUTION_DIR
-fi
-
-cd $SOLUTION_DIR
-
-# Generate (or regenerate) the solution right here based on the CMakeList.txt in the source folder
-cmake ../$SOURCE_DIR
+# Generate (or regenerate) the build solution based on the root CMakeList.txt
+cmake -S $CMAKE_LIST_DIR -B $BUILD_DIR -DGLFW_BUILD_DOCS=OFF
