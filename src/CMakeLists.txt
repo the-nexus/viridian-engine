@@ -2,13 +2,15 @@
 cmake_minimum_required (VERSION 3.8)
 
 set (EXT_DIR ./external)
-set (SRC_DIR ./src)
 
-file (GLOB_RECURSE SRC_FILES ${SRC_DIR}/*.h* ${SRC_DIR}/*.c*)
+file (GLOB_RECURSE ENGINE_FILES
+    ./core/*.h* ./core/*.c*
+    ./rendering/*.h* ./rendering/*.c*
+)
 
 # Create and setup project and executable
 project (CeruleanEngine CXX)
-add_executable (${PROJECT_NAME} ${SRC_FILES})
+add_executable (${PROJECT_NAME} ${ENGINE_FILES})
 target_compile_features (${PROJECT_NAME} PRIVATE cxx_std_17)
 
 # Link libraries and external dependencies
@@ -30,6 +32,6 @@ target_link_libraries (${PROJECT_NAME}
     glm
 )
 
-# Create the source groups for source tree with root at CMAKE_CURRENT_SOURCE_DIR
+# Create the groups for engine files
 # https://stackoverflow.com/questions/31422680/how-to-set-visual-studio-filters-for-nested-sub-directory-using-cmake
-source_group (TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SRC_FILES})
+source_group (TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${ENGINE_FILES})
