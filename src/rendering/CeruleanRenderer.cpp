@@ -1,7 +1,8 @@
 #include "CeruleanRenderer.h"
 
-#define GLFW_INCLUDE_GLU
+#include <glad/gl.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
