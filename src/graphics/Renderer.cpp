@@ -1,4 +1,4 @@
-#include "CeruleanRenderer.h"
+#include "Renderer.h"
 
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
@@ -7,7 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-CeruleanRenderer::CeruleanRenderer()
+using namespace Cerulean::Graphics;
+
+Renderer::Renderer()
 {
     if (glfwInit())
     {
@@ -15,7 +17,7 @@ CeruleanRenderer::CeruleanRenderer()
     }
 }
 
-CeruleanRenderer::~CeruleanRenderer()
+Renderer::~Renderer()
 {
     if (m_glWindow)
     {
@@ -25,7 +27,7 @@ CeruleanRenderer::~CeruleanRenderer()
     glfwTerminate();
 }
 
-void CeruleanRenderer::CreateMainWindow(char const* title, int const width, int const height, int const posX, int const posY)
+void Renderer::CreateMainWindow(char const* title, int const width, int const height, int const posX, int const posY)
 {
     if (!m_glWindow)
     {
@@ -37,7 +39,7 @@ void CeruleanRenderer::CreateMainWindow(char const* title, int const width, int 
     }
 }
 
-void CeruleanRenderer::Update()
+void Renderer::Update()
 {
     if (!m_glWindow)
     {
@@ -87,7 +89,7 @@ void CeruleanRenderer::Update()
     glfwPollEvents();
 }
 
-bool CeruleanRenderer::ShouldQuit() const
+bool Renderer::ShouldQuit() const
 {
     return !m_glWindow || glfwWindowShouldClose(m_glWindow);
 }

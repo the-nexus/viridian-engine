@@ -4,7 +4,6 @@ set (EXT_DIR ./external)
 
 file (GLOB_RECURSE ENGINE_FILES Main.cpp
     ./core/*.h* ./core/*.c*
-    ./rendering/*.h* ./rendering/*.c*
 )
 source_group (TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${ENGINE_FILES})
 
@@ -13,25 +12,21 @@ project (CeruleanEngine CXX)
 add_executable (${PROJECT_NAME} ${ENGINE_FILES})
 target_compile_features (${PROJECT_NAME} PRIVATE cxx_std_17)
 
-# Link libraries and external dependencies
-add_subdirectory (${EXT_DIR}/glfw)
-add_subdirectory (${EXT_DIR}/glad)
-add_subdirectory (${EXT_DIR}/glm)
+# Link children CMakeLists.txt files
+add_subdirectory (./external/glfw)
+add_subdirectory (./external/glad)
+add_subdirectory (./external/glm)
+add_subdirectory (./graphics)
 
+# Link dependencies
 target_include_directories (${PROJECT_NAME}
-    PUBLIC ${EXT_DIR}/glfw/include
-    PUBLIC ${EXT_DIR}/glad/include
-    PUBLIC ${EXT_DIR}/glm/glm
+    PUBLIC ./graphics
 )
 
 target_link_directories (${PROJECT_NAME}
-    PUBLIC ${EXT_DIR}/glfw/src
-    PUBLIC ${EXT_DIR}/glad/src
-    PUBLIC ${EXT_DIR}/glm/glm
+    PUBLIC ./graphics
 )
 
 target_link_libraries (${PROJECT_NAME}
-    glfw
-    glad
-    glm
+    CeruleanGraphics
 )

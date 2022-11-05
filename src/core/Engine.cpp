@@ -1,7 +1,9 @@
-#include "CeruleanEngine.h"
-#include "../rendering/CeruleanRenderer.h"
+#include "Engine.h"
+#include "../graphics/Renderer.h"
 
-CeruleanEngine::~CeruleanEngine()
+using namespace Cerulean;
+
+Core::Engine::~Engine()
 {
     if (m_renderer)
     {
@@ -9,16 +11,16 @@ CeruleanEngine::~CeruleanEngine()
     }
 }
 
-void CeruleanEngine::Initialize()
+void Core::Engine::Initialize()
 {
-    m_renderer = new CeruleanRenderer();
+    m_renderer = new Graphics::Renderer();
     if (m_renderer->IsInitialized())
     {
         m_renderer->CreateMainWindow("Cerulean Engine", 1280, 720, 100, 100);
     }
 }
 
-void CeruleanEngine::Loop()
+void Core::Engine::Loop()
 {
     if (!m_renderer || m_renderer->ShouldQuit())
     {

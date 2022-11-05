@@ -1,14 +1,15 @@
-#include "core/CeruleanEngine.h"
-
+#include "core/Engine.h"
 #include <iostream>
 
 int main()
 {
-    CeruleanEngine engine;
+    Cerulean::Core::Engine engine;
+
     engine.Initialize();
     while (!engine.ShouldQuit())
     {
         engine.Loop();
     }
+
     return 0;
 }
