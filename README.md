@@ -1,4 +1,4 @@
-# Cerulean Engine
+# Viridian Engine
 A graphic engine for Windows and Linux build in C++.
 
 

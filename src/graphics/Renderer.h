@@ -2,7 +2,7 @@
 
 struct GLFWwindow;
 
-namespace Cerulean::Graphics
+namespace Viridian::Graphics
 {
     class Renderer
     {

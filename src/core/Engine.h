@@ -1,7 +1,7 @@
 #pragma once
 #include "../graphics/Renderer.h"
 
-namespace Cerulean::Core
+namespace Viridian::Core
 {
     class Engine
     {

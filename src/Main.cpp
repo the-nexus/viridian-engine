@@ -3,7 +3,7 @@
 
 int main()
 {
-    Cerulean::Core::Engine engine;
+    Viridian::Core::Engine engine;
 
     engine.Initialize();
     while (!engine.ShouldQuit())

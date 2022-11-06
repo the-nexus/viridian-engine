@@ -8,7 +8,7 @@ file (GLOB_RECURSE ENGINE_FILES Main.cpp
 source_group (TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${ENGINE_FILES})
 
 # Create and setup project and executable
-project (CeruleanEngine CXX)
+project (ViridianEngine CXX)
 add_executable (${PROJECT_NAME} ${ENGINE_FILES})
 target_compile_features (${PROJECT_NAME} PRIVATE cxx_std_17)
 
@@ -28,5 +28,5 @@ target_link_directories (${PROJECT_NAME}
 )
 
 target_link_libraries (${PROJECT_NAME}
-    CeruleanGraphics
+    ViridianGraphics
 )

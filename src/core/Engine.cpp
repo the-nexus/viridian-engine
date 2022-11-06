@@ -1,7 +1,7 @@
 #include "Engine.h"
 #include "../graphics/Renderer.h"
 
-using namespace Cerulean;
+using namespace Viridian;
 
 Core::Engine::~Engine()
 {
@@ -16,7 +16,7 @@ void Core::Engine::Initialize()
     m_renderer = new Graphics::Renderer();
     if (m_renderer->IsInitialized())
     {
-        m_renderer->CreateMainWindow("Cerulean Engine", 1280, 720, 100, 100);
+        m_renderer->CreateMainWindow("Viridian Engine", 1280, 720, 100, 100);
     }
 }
 

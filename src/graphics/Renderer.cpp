@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace Cerulean::Graphics;
+using namespace Viridian::Graphics;
 
 Renderer::Renderer()
 {
