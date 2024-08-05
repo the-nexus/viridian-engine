@@ -30,3 +30,18 @@
 *.exe
 *.out
 *.app
+
+# IDE
+.vscode/
+
+# CMake
+.cmake/
+CMakeFiles/
+build/
+Makefile
+compile_commands.json
+cmake_install.cmake
+CMakeCache.txt
+
+# Executables
+ViridianDemo
