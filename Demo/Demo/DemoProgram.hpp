@@ -11,12 +11,12 @@
 
 namespace Viridian::Demo
 {
-    class DemoProgram final : public Runtime::IProgram
+    class DemoProgram final : public Runtime::Program
     {
         using clock_t = std::chrono::steady_clock;
         using time_point_t = std::chrono::time_point<clock_t>;
 
-    public:
+    protected:
         void Start() override;
         void Stop() override;
         void Update() override;

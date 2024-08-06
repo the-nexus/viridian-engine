@@ -31,17 +31,29 @@
 *.out
 *.app
 
-# IDE
+# VS Code
+
+# Visual Studio / Code
 .vscode/
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.sln
 
 # CMake
 .cmake/
 CMakeFiles/
-build/
 Makefile
 compile_commands.json
 cmake_install.cmake
 CMakeCache.txt
+
+# Build
+build/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
 
 # Executables
 ViridianDemo

@@ -6,5 +6,6 @@ using namespace Viridian;
 
 int main()
 {
-    return Runtime::ExecuteProgram<Demo::DemoProgram>();
+    Demo::DemoProgram program {};
+    return program.Execute();
 }
