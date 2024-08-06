@@ -24,8 +24,9 @@ target_include_directories (${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR})
 #######################
 ## Link dependencies ##
 
-#target_link_libraries (${PROJECT_NAME}
-#    glfw
+target_link_libraries (${PROJECT_NAME}
+    PRIVATE glad
+    PRIVATE glfw
 #    glm::glm
 #    Vulkan::Headers
-#)
+)

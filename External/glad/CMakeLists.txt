@@ -1,0 +1,13 @@
+
+project (glad C)
+
+file (GLOB_RECURSE FILES_SOURCE *.c)
+file (GLOB_RECURSE FILES_HEADER *.h)
+
+source_group (TREE ${PROJECT_SOURCE_DIR} FILES ${FILES_SOURCE} ${FILES_HEADER})
+
+add_library (${PROJECT_NAME} SHARED ${FILES_SOURCE} ${FILES_HEADER})
+
+set_target_properties (${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
+
+target_include_directories (${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)

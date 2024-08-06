@@ -1,9 +1,9 @@
 
-#include "Program.hpp"
+#include "DemoProgram.hpp"
 
 using namespace Viridian::Demo;
 
-void Program::Start()
+void DemoProgram::Start()
 {
     m_window = std::make_unique<Graphics::Window>();
     m_window->Open();
@@ -12,12 +12,12 @@ void Program::Start()
     std::cout << "DEMO PROGRAM STARTED" << std::endl;
 }
 
-void Program::Stop()
+void DemoProgram::Stop()
 {
     std::cout << "DEMO PROGRAM STOPPED" << std::endl;
 }
 
-void Program::Update()
+void DemoProgram::Update()
 {
     m_window->Update();
 
@@ -31,7 +31,7 @@ void Program::Update()
     }
 }
 
-bool Program::NeedsUpdate() const
+bool DemoProgram::NeedsUpdate() const
 {
     return m_window->IsOpened();
 }

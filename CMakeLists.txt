@@ -18,6 +18,7 @@ project (ViridianEngine
     LANGUAGES CXX
 )
 
+add_subdirectory (./External)
 add_subdirectory (./Graphics)
 add_subdirectory (./Runtime)
 

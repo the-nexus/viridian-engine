@@ -1,10 +1,10 @@
 
 
-#include "Demo/Program.hpp"
+#include "Demo/DemoProgram.hpp"
 
 using namespace Viridian;
 
 int main()
 {
-    return Runtime::ExecuteProgram<Demo::Program>();
+    return Runtime::ExecuteProgram<Demo::DemoProgram>();
 }

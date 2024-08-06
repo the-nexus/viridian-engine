@@ -2,13 +2,22 @@
 #pragma once
 
 #include <iostream>
+#include <memory>
+
+class GLFWwindow;
 
 namespace Viridian::Graphics
 {
+
+    struct GLFWwindowDestructor
+    {
+        void operator()(GLFWwindow* glfwWindow);
+    };
+
     class Window
     {
     public:
-        Window() = default;
+        Window();
         ~Window();
 
         void Open();
@@ -18,6 +27,7 @@ namespace Viridian::Graphics
         bool IsOpened() const { return m_isOpened; }
 
     private:
+        std::unique_ptr<GLFWwindow, GLFWwindowDestructor> m_glfwWindow = nullptr;
         bool m_isOpened = false;
     };
 }
