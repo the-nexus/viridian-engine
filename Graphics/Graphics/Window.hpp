@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include <iostream>
+#include <array>
 #include <memory>
 
 class GLFWwindow;
@@ -17,6 +17,8 @@ namespace Viridian::Graphics
     class Window
     {
     public:
+        static void OnGlfwWindowResized(GLFWwindow* glfwWindow, int const width, int const height);
+
         Window();
         ~Window();
 
@@ -28,6 +30,7 @@ namespace Viridian::Graphics
 
     private:
         std::unique_ptr<GLFWwindow, GLFWwindowDestructor> m_glfwWindow = nullptr;
+        std::array<int, 2> m_size = { 800, 600 };
         bool m_isOpened = false;
     };
 }
